@@ -24,6 +24,12 @@ Read the guide matching the package's build system or language.
 | Porting from nixpkgs (copy, strip maintainers/updateScript, TODO missing deps) | [porting](skills/porting/SKILL.md) |
 | Bash phases under structured attrs (array iteration, env attrset, substituteAll) | [structured-attrs](skills/structured-attrs/SKILL.md) |
 
+## Repository Scaffolding
+
+| Task | Guide |
+|------|-------|
+| Create a new ekapkgs-style repo (flake, pins, CI, GitHub Actions) | [ekapkgs-repo](skills/ekapkgs-repo/SKILL.md) |
+
 ## Fixing Build Failures
 
 | Symptom | Guide |
