@@ -3,6 +3,10 @@
 Centralized AI skills for [ekapkgs](https://github.com/ekala-project/ekapkgs)
 and the broader Ekala ecosystem. Consumed as a Claude Code plugin.
 
+## Commit Conventions
+
+- **Do not** add AI attribution (e.g., `Co-Authored-By`) to commit messages
+
 ## Writing Packages
 
 Read the guide matching the package's build system or language.
