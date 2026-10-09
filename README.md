@@ -36,6 +36,18 @@ codex plugin add ekala@ekala
 Any other consumer of the Agent Plugins format can point at the repository
 root. Skills are namespaced `ekala:<skill>`.
 
+### With agent-distro
+
+`agent-distro.nix` makes this repository an
+[agent-distro](https://agent-distro.nixos.asia) profile, so any of the agents
+above starts with these skills loaded, nothing installed:
+
+```bash
+nix run github:juspay/agent-distro -- github:ekala-project/ekala-ai-skills
+```
+
+A terminal opened inside this repository uses the profile on its own.
+
 For a single project in Claude Code, copy the skills into the project instead:
 
 ```bash
