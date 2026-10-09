@@ -48,7 +48,7 @@ nix run github:juspay/agent-distro -- github:ekala-project/ekala-ai-skills
 
 A terminal opened inside this repository uses the profile on its own.
 
-CI checks the profile's `packages` against the binary cache on every platform.
+CI checks the profile's `packages` against the binary cache on x86_64 Linux.
 
 For a single project in Claude Code, copy the skills into the project instead:
 
