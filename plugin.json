@@ -1,0 +1,10 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "ekala",
+  "description": "Nix development skills for coding agents",
+  "author": { "name": "Ekala Contributors" },
+  "homepage": "https://github.com/ekala-project/ekala-claude-skills",
+  "repository": "https://github.com/ekala-project/ekala-claude-skills",
+  "license": "MIT",
+  "keywords": ["nix", "cmake", "skills"]
+}

@@ -1,10 +1,7 @@
-# Ekala Claude Skills
+# Ekala Skills
 
-A collection of Claude Code skills for Nix development workflows.
-
-## Overview
-
-This plugin provides specialized skills to enhance Claude Code's capabilities when working with Nix package management and builds.
+Nix development skills for coding agents: Claude Code, Codex, Oh My Pi, and
+anything else that loads [Agent Plugins](https://agent-plugins.org) packages.
 
 ## Skills
 
@@ -22,20 +19,38 @@ The `ekala-cmake-nix` skill assists with building CMake-based Nix packages, unde
 
 ## Installation
 
-### As a Plugin
+Clone the repository, then load it in your agent:
 
-1. Clone this repository or download it to your local machine
+```bash
+# Oh My Pi
+omp -e /path/to/ekala-claude-skills
 
-2. Install the plugin using Claude Code:
-   ```bash
-   claude-code plugins install /path/to/ekala-claude-skills
-   ```
+# Claude Code
+claude --plugin-dir /path/to/ekala-claude-skills
 
-3. The skills will be available with the namespace `ekala-claude-skills:skill-name`
+# Codex
+codex plugin marketplace add /path/to/ekala-claude-skills
+codex plugin add ekala@ekala
+```
 
-### For a Single Project
+Any other consumer of the Agent Plugins format can point at the repository
+root. Skills are namespaced `ekala:<skill>`.
 
-Copy the `skills/` directory into your project's `.claude/` directory:
+### With agent-distro
+
+`agent-distro.nix` makes this repository an
+[agent-distro](https://agent-distro.nixos.asia) profile, so any of the agents
+above starts with these skills loaded, nothing installed:
+
+```bash
+nix run github:juspay/agent-distro -- github:ekala-project/ekala-ai-skills
+```
+
+A terminal opened inside this repository uses the profile on its own.
+
+CI checks the profile's `packages` against the binary cache on x86_64 Linux.
+
+For a single project in Claude Code, copy the skills into the project instead:
 
 ```bash
 cp -r skills /path/to/your/project/.claude/
@@ -43,14 +58,15 @@ cp -r skills /path/to/your/project/.claude/
 
 ## Plugin Structure
 
-```
+```text
 ekala-claude-skills/
-├── .claude-plugin/
-│   └── plugin.json          # Plugin manifest
+├── plugin.json                       # Agent Plugins manifest
+├── .agents/plugins/marketplace.json  # Codex marketplace catalog
+├── .claude-plugin/plugin.json        # Claude Code manifest
 ├── skills/
 │   └── nix-build/
-│       └── SKILL.md         # Nix build skill definition
-└── README.md                # This file
+│       └── SKILL.md                  # One skill
+└── README.md                         # This file
 ```
 
 ## Contributing
